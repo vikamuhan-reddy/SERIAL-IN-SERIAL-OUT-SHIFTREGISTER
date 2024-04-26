@@ -25,18 +25,41 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 
 **Procedure**
 
-/* write all the steps invloved */
-
+1. Declare a Verilog module EXP11 with input ports clk, rst, sin, and an output port q as a 4-bit vector.
+2. Declare an internal register q to store the state of the flip-flops.
+3. Create an always block triggered on the positive edge of clk and rst.
+4. If rst is asserted, assign q to 4'b0000 to reset all flip-flops to 0.
+5. If rst is not asserted, assign the value of sin to the first flip-flop (q[0]) and shift the values of q to the right.
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+``` verilog
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: Vikamuhan reddy.n
+RegisterNumber:212223240181
 
-Developed by: RegisterNumber:
-
-*/
+module EXP10(clk, sin, q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
+```
 
 **RTL LOGIC FOR SISO Shift Register**
+![image](https://github.com/vikamuhan-reddy/SERIAL-IN-SERIAL-OUT-SHIFTREGISTER/assets/144928933/73b4f1d4-30a2-4d9a-910a-17a6e60df236)
+
 
 **TIMING DIGRAMS FOR SISO Shift Register**
+![image](https://github.com/vikamuhan-reddy/SERIAL-IN-SERIAL-OUT-SHIFTREGISTER/assets/144928933/22ccb03b-6303-434c-b26e-8a107479ab49)
 
-**RESULTS**
+
+**RESULT**
+
+Thus,SISO Shift Register using verilog and validating their functionality using their functional tables has successful execution of the program.
