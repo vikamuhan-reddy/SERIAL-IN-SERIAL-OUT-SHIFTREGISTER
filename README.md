@@ -30,6 +30,7 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 3. Create an always block triggered on the positive edge of clk and rst.
 4. If rst is asserted, assign q to 4'b0000 to reset all flip-flops to 0.
 5. If rst is not asserted, assign the value of sin to the first flip-flop (q[0]) and shift the values of q to the right.
+   
 **PROGRAM**
 
 ``` verilog
